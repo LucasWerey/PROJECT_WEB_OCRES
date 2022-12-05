@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+  font-size: 1.2em;
+
+  tr {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+.TableBox {
+  height: 250px;
+  overflow-y: scroll;
+  width: 95%;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+Button {
+  border-radius: 15px;
+  text-align: center;
+  height: 80%;
+  cursor: pointer;
+  border: none;
+  background-color: #ffff;
+}
+
+@media screen and (max-width: 780px) {
+  table {
+    font-size: 0.8em;
+  }
+}

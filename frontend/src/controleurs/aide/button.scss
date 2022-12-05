@@ -1,0 +1,27 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Envoie {
+    min-width: 200px;
+    min-height: 60px;
+    border-radius: 30px;
+    font-size: large;
+    letter-spacing: 1.3px;
+    font-weight: 900;
+    border: none;
+    background-color: #ffff;
+    cursor: pointer;
+    transition: 1s background-color;
+
+    &:hover {
+        background-color: #971818;
+        background-position: left;
+    }
+
+    &:active {
+        background-color: #110101;
+    }
+}

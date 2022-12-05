@@ -1,0 +1,142 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+
+  .Min {
+    border-radius: 20px;
+    border: none;
+    height: 100%;
+    font-size: 1.5em;
+    text-align: justify;
+  }
+
+  .Date {
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    height: 100%;
+    font-size: 1.5em;
+  }
+
+  .Date:disabled {
+    opacity: 1;
+    background-color: white;
+    color: black;
+  }
+
+  .contenu {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+  width: 100%;
+
+  .Champs {
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    width: 100%;
+  }
+}
+
+.button {
+  border-radius: 20px;
+  border: none;
+  width: 30%;
+  height: 100%;
+  font-size: 1.5em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(13, 3, 3);
+    color: rgb(255, 255, 255);
+  }
+
+  &:active {
+    background-color: rgb(175, 31, 31);
+    color: rgb(255, 255, 255);
+  }
+}
+
+.confirmation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.radio {
+  margin-bottom: 2%;
+
+  input[type="checkbox"] {
+    margin-right: 15px;
+
+    &:after {
+      width: 21px;
+      height: 21px;
+      border-radius: 20px;
+      top: -4px;
+      left: -1px;
+      position: relative;
+      background-color: #ffffff;
+      content: "";
+      display: inline-block;
+      visibility: ivisible;
+      border: 2px solid white;
+    }
+
+    &:checked:after {
+      width: 21px;
+      height: 21px;
+      border-radius: 20px;
+      top: -4px;
+      left: -1px;
+      position: relative;
+      background-color: #d21941;
+      content: "";
+      display: inline-block;
+      visibility: invisible;
+      border: 2px solid white;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Min {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .Date {
+    width: 200px;
+  }
+
+  .Champs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (781px < width < 1030px) {
+  .Min {
+    width: 250px;
+  }
+
+  .Date {
+    width: 250px;
+  }
+}
