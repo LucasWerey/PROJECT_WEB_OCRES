@@ -20,3 +20,12 @@ Les instructions sont à retrouver dans le pdf instruction.pdf.
 
 **Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
 
+
+## Trello
+
+Afin de s'assurer de la bonne avancée de notre projet nous avons utilisé un Trello. Cette plateforme nous a permis de repartir le travail pendant le projet.
+
+<p align="center">
+<a href="https://trello.com/b/Nbl4dACs/to-do-projet-web">Lien Trello</a>
+</p>
+
