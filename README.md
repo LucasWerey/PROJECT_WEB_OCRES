@@ -29,3 +29,11 @@ Afin de s'assurer de la bonne avancée de notre projet nous avons utilisé un Tr
 <a href="https://trello.com/b/Nbl4dACs/to-do-projet-web">Lien Trello</a>
 </p>
 
+## Notre Dashboard
+
+Nous avons décidé de nous tourner vers un dashboard orienté SNCF et plus particulièrement autour des objets trouvés. Ce choix s'explique par le fait qu'il y'a un large choix d'API utilisables gratuitement. 
+
+<p align="center">
+<a href="https://ressources.data.sncf.com/pages/accueil/">Data SNCF</a>
+</p>
+
