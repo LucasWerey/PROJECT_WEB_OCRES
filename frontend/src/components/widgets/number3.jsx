@@ -1,9 +1,10 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import React from "react";
 import "./nombre.scss";
 import Tooltip from "@mui/material/Tooltip";
 
+// Composant pour l'affichage de l'API
 const number1 = ({ todo }) => {
   /* Formatting the date. */
   const formatter = new Intl.DateTimeFormat("fr", {
@@ -13,7 +14,7 @@ const number1 = ({ todo }) => {
   var date = todo.fields.mois;
   var date2 = formatter.format(new Date(date));
   const text =
-    "Evolution statisque de l'utilisation des API SNCF au fil des mois d'après les données de ressources.data.sncf.com ";
+    "Evolution statistique de l'utilisation des APIs SNCF au fil des mois d'après les données de ressources.data.sncf.com ";
   return (
     <Box display="flex" flexDirection="column" justifyContent="center">
       <Box

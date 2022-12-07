@@ -7,15 +7,16 @@ import { Box, Typography, useTheme, IconButton } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Tooltip } from "@mui/material";
 
-const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+const text =
+  "Types d'objets perdus d'après les données de ressources.data.sncf.com";
 
 const PieChartD = () => {
   const [dailyData, setDailyData] = useState([]);
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
 
+  // Récupération des données de l'API
   const fetchApi = async () => {
     const dailyData = await fetchDailyData();
     setDailyData(dailyData);
@@ -28,10 +29,10 @@ const PieChartD = () => {
   const piechart = dailyData[0] ? (
     <Pie
       data={{
-        labels: dailyData.map((data,index) => data.year),
+        labels: dailyData.map((data, index) => data.year),
         datasets: [
           {
-            data: dailyData.map((data,index) => data.value),
+            data: dailyData.map((data, index) => data.value),
             label: "Quantité",
             fill: true,
             backgroundColor: [

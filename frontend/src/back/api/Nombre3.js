@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Contenu from "../../components/widgets/number3";
 
+// Récupération des données de l'API
 export default function AxiosRequest() {
   const [data, setData] = useState([]);
   const url =

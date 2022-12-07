@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Creation d'un schema
 const testTemplate = new mongoose.Schema({
   duree: {
     type: Number,

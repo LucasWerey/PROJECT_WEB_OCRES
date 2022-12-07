@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import "./Ajout.scss";
 
+
 var date = new Date();
 var aujdF = date.toLocaleString("fr-FR", {
   weekday: "long",
@@ -11,38 +12,60 @@ var aujdF = date.toLocaleString("fr-FR", {
   day: "numeric",
 });
 
+// Composant pour l'ajout de données dans la base de données
+
 class Ajout extends Component {
   constructor() {
     super();
     this.state = {
       duree: "",
+      check: false,
     };
 
     this.changeDuree = this.changeDuree.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.check = this.check.bind(this);
   }
 
+  // Fonction pour récupérer la valeur du champ de texte
   changeDuree(event) {
     this.setState({
       duree: event.target.value,
     });
   }
 
+  // Fonction pour vérifier que l'utilisateur a bien coché la case de confirmation
+  check(event) {
+    if (event.target.checked) {
+      this.setState({
+        check: true,
+      });
+    } else {
+      this.setState({
+        check: false,
+      });
+    }
+  }
+
+  // Fonction pour envoyer les données au serveur
   onSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
     const registered = {
       duree: this.state.duree,
     };
+    console.log(this.state.check);
+    if (this.state.check === true) {
+      axios
+        .post("http://localhost:4000/app/post", registered)
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error));
 
-    axios
-      .post("http://localhost:4000/app/post", registered)
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error));
-
-    this.setState({
-      duree: "",
-    });
+      this.setState({
+        duree: "",
+      });
+    } else if (this.state.check === false) {
+      alert("Vous devez confirmer que les données sont correctes");
+    }
   }
 
   render() {
@@ -83,8 +106,9 @@ class Ajout extends Component {
             <input
               type="checkbox"
               id="Oui"
-              value="Oui"
+              value={this.state.check}
               className="BtnRadio"
+              onClick={this.check}
             ></input>
             <label>Confirmer</label>
           </Box>

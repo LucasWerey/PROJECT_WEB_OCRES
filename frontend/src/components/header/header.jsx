@@ -1,6 +1,8 @@
 import { Typography, Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 
+
+// Composant pour l'affichage du titre de la page
 const Header = ({ title }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

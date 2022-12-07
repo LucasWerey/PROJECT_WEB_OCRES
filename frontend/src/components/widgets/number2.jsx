@@ -1,24 +1,12 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import React from "react";
 import "./nombre.scss";
 import Tooltip from "@mui/material/Tooltip";
 
+// Composant pour l'affichage de l'API
 const number1 = ({ todo }) => {
   let formatter = Intl.NumberFormat("en-US");
-
-  // const YearSelector = [
-  //     {label: '2013', value: '2013'},
-  //     {label: '2014', value: '2014'},
-  //     {label: '2015', value: '2015'},
-  //     {label: '2016', value: '2016'},
-  //     {label: '2017', value: '2017'},
-  //     {label: '2018', value: '2018'},
-  //     {label: '2019', value: '2019'},
-  //     {label: '2020', value: '2020'},
-  //     {label: '2021', value: '2021'},
-  //     {label: '2022', value: '2022'},
-  // ]
 
   const text =
     "Nombre de déclarations de perte sur l'année 2022 d'après les données de ressources.data.sncf.com";

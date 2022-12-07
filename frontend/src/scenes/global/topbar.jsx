@@ -1,9 +1,8 @@
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import React from "react";
 import Grid from "@mui/material/Grid";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -16,12 +15,13 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import Button from "@mui/material/Button";
 
+//Création de la topbar avec barre de recherche, de changement de mode et de connexion
+
 const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
   const [open, setOpen] = React.useState(false);
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleClickToOpen = () => {
     setOpen(true);
@@ -75,27 +75,41 @@ const Topbar = () => {
             <DialogContentText>
               <Grid container>
                 <Grid item xs={12} display="flex" justifyContent="center">
-                  <Box marginTop="-20px">
-                    <h1>Rose MARTIN</h1>
+                  <Box>
+                    <Typography component="span" variant="h2">
+                      Rose MARTIN
+                    </Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={6} paddingTop="20px">
-                  <h2>E-mail : </h2>
+                  <Typography component="span" variant="h3">
+                    E-mail :{" "}
+                  </Typography>
                 </Grid>
                 <Grid item xs={6} paddingTop="20px">
-                  <h2>rose.martin@edu.ece.fr</h2>
+                  <Typography component="span" variant="h3">
+                    rose.martin@edu.ece.fr
+                  </Typography>
                 </Grid>
                 <Grid item xs={6} paddingTop="10px">
-                  <h2>Date de naissance :</h2>
+                  <Typography component="span" variant="h3">
+                    Date de naissance :
+                  </Typography>
                 </Grid>
                 <Grid item xs={6} paddingTop="10px">
-                  <h2>20 Février 2001</h2>
+                  <Typography component="span" variant="h3">
+                    20 Février 2001
+                  </Typography>
                 </Grid>
                 <Grid item xs={6} paddingTop="10px">
-                  <h2>Type de compte :</h2>
+                  <Typography component="span" variant="h3">
+                    Type de compte :
+                  </Typography>
                 </Grid>
                 <Grid item xs={6} paddingTop="10px">
-                  <h2>Administrateur</h2>
+                  <Typography component="span" variant="h3">
+                    Administrateur
+                  </Typography>
                 </Grid>
               </Grid>
             </DialogContentText>

@@ -1,9 +1,9 @@
-import React, {useEffect, UseEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Contenu from "../../components/widgets/number2";
 
 
-
+// Recuperation des données de l'API
 export default function AxiosRequest() {
 
     const[data, setData] = useState([])

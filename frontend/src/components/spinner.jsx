@@ -1,6 +1,6 @@
-import React from "react";
 import "./spinner.scss";
 
+// Création d'un spinner de chargement
 export default function LoadingSpinner() {
   return (
     <div className="spinner-container">

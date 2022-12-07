@@ -6,11 +6,14 @@ import { Box, Typography } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { Tooltip } from "@mui/material";
 
-const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+const text =
+  "Nombre d'objets résitués par an d'après les données de ressources.data.sncf.com";
 
+// Composant pour l'affichage des données de l'API
 const BarChart = () => {
   const [dailyData, setDailyData] = useState([]);
 
+  // Récupération des données de l'API
   const fetchApi = async () => {
     const dailyData = await fetchDailyData();
     setDailyData(dailyData);
@@ -23,10 +26,10 @@ const BarChart = () => {
   const barchart = dailyData[0] ? (
     <Bar
       data={{
-        labels: dailyData.map((data,index) => data.year),
+        labels: dailyData.map((data, index) => data.year),
         datasets: [
           {
-            data: dailyData.map((data,index) => data.value),
+            data: dailyData.map((data, index) => data.value),
             label: "Nombre d'objets restitués",
             fill: true,
             backgroundColor: "rgba(65, 105, 225,0.3)",

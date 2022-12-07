@@ -1,11 +1,13 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Tooltip from "@mui/material/Tooltip";
 import React from "react";
 import "./nombre.scss";
 
+// Composant pour l'affichage de l'API
 const number1 = ({ todo }) => {
-  const text = "Nombre d'objets perdus restitués sur l'année 2022 d'après les données de ressources.data.sncf.com"
+  const text =
+    "Nombre d'objets perdus restitués sur l'année 2022 d'après les données de ressources.data.sncf.com";
   let formatter = Intl.NumberFormat("en-US");
 
   return (
@@ -26,17 +28,7 @@ const number1 = ({ todo }) => {
           <InfoOutlinedIcon />
         </Tooltip>
       </Box>
-      {/* <Box display="flex"> 
-            <select name="annee">
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-            <option value="2016">2016</option>
-            <option value="2015">2015</option>
-           </select>
-           </Box>  */}
+
       <Box display="flex" mt="20px" mb="6%" justifyContent="center">
         <Typography variant="h1" className="nombre">
           {formatter.format(todo.facets[9].count)}

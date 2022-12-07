@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const testTemplateCopy = require("../models/testModels");
+const TemplateCopy = require("../models/Models");
+
+// Routes pour ajouter, supprimer, modifier et afficher les données de la base de données
 
 router.post("/post", (request, response) => {
-  const data = new testTemplateCopy({
+  const data = new TemplateCopy({
     duree: request.body.duree,
   });
 
@@ -18,7 +20,7 @@ router.post("/post", (request, response) => {
 });
 
 router.get("/get", (request, response) => {
-  testTemplateCopy.find({}, (error, data) => {
+  TemplateCopy.find({}, (error, data) => {
     if (error) {
       response.json(error);
     } else {
@@ -28,7 +30,7 @@ router.get("/get", (request, response) => {
 });
 
 router.delete("/delete/:id", (request, response) => {
-  testTemplateCopy.findByIdAndDelete(request.params.id, (error, data) => {
+  TemplateCopy.findByIdAndDelete(request.params.id, (error, data) => {
     if (error) {
       response.json(error);
     } else {
@@ -38,7 +40,7 @@ router.delete("/delete/:id", (request, response) => {
 });
 
 router.put("/put/:id", (request, response) => {
-  testTemplateCopy.findByIdAndUpdate(
+  TemplateCopy.findByIdAndUpdate(
     request.params.id,
     {
       duree: request.body.duree,

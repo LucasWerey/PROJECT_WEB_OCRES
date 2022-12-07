@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import axios from "axios";
 import "./Supprimer.scss";
 
+// Composant pour la suppression et la modification de données dans la base de données
 class Supprimer extends Component {
   constructor() {
     super();
@@ -71,12 +72,23 @@ class Supprimer extends Component {
                 <td>{data.date.slice(0, 10)}</td>
                 <td>{data.duree} minutes</td>
                 <td>
-                  <button type="submit" value={data._id} onClick={this.modif}>
+                  <button
+                    type="submit"
+                    disabled
+                    value={data._id}
+                    onClick={this.modif}
+                    className="ButtonBox"
+                  >
                     Modifier
                   </button>
                 </td>
                 <td>
-                  <button type="submit" value={data._id} onClick={this.delete}>
+                  <button
+                    type="submit"
+                    value={data._id}
+                    onClick={this.delete}
+                    className="ButtonBox"
+                  >
                     Supprimer
                   </button>
                 </td>

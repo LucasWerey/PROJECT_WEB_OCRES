@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { fetchDailyData } from "../../back/api/BarChart";
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import axios from "axios";
 import Tooltip from "@mui/material/Tooltip";
@@ -10,6 +9,7 @@ import Tooltip from "@mui/material/Tooltip";
 const text =
   "Nombre de minutes de retard journalieres à cause de bagages oubliés d'après une estimation douteuse de Rose et Lucas sur MongoDb";
 
+// Composant pour l'affichage des données de MongoDb
 class LineChart extends Component {
   constructor() {
     super();
@@ -51,10 +51,12 @@ class LineChart extends Component {
         <Box>
           <Line
             data={{
-              labels: this.state.data.map((item,index) => item.date.slice(0, 10)),
+              labels: this.state.data.map((item, index) =>
+                item.date.slice(0, 10)
+              ),
               datasets: [
                 {
-                  data: this.state.data.map((item,index) => item.duree),
+                  data: this.state.data.map((item, index) => item.duree),
                   label: "Minutes de retard",
                   fill: true,
                   backgroundColor: "rgba(65, 105, 225,0.3)",

@@ -7,7 +7,9 @@ import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+
+
+// Création d'une sidebar avec react-pro-sidebar 
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -68,18 +70,10 @@ const Sidebar = () => {
             {!isCollapsed && (
               <Box
                 display="flex"
-                justifyContent="space-between"
+                justifyContent="end"
                 alignItems="center"
                 ml="15px"
               >
-                <Typography
-                  style={{ cursor: "default" }}
-                  variant="h3"
-                  color={colors.grey[100]}
-                >
-                  ADMIN PANEL
-                </Typography>
-
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -108,14 +102,6 @@ const Sidebar = () => {
               title="Paramètres"
               to="/parametre"
               icon={<SettingsOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
-            <Item
-              title="Aide"
-              to="/aide"
-              icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

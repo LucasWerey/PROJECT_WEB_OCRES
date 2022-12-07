@@ -1,8 +1,6 @@
 import { Box, useTheme, ThemeProvider, Grid } from "@mui/material";
 import React from "react";
 import { tokens } from "../../theme";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import Header from "../../components/header/header";
 import BarChart from "../../components/widgets/barChart";
 import Camembert from "../../components/widgets/pieChart";
@@ -11,6 +9,7 @@ import Number1 from "../../back/api/Nombre1";
 import Number2 from "../../back/api/Nombre2";
 import Number3 from "../../back/api/Nombre3";
 
+// Composant pour l'affichage responsive des données
 const Grille = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
